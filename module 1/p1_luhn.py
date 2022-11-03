@@ -29,9 +29,9 @@ def shorten_num(i: int) -> int:
   for c in s: new_num += int(c)
   return new_num
 
-f = open("m1p1_luhn.in", "r")
+f = open("p1_luhn.in", "r")
 s = f.read()
-out = "".join([str(luhn(line)) for line in s.split("\n")])
+out = "".join([str(luhn(line)) for line in s.splitlines()])
 print(out)
 print(int(out) == 5496331440914992338434701218071555719657419448245128019889398009532562488698540071959143506293615978)
 f.close()
