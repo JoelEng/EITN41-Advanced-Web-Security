@@ -16,7 +16,7 @@ def hashNode(prev: str, node: str) -> str:
     return node # Avoid hashing the first leaf
   return sha1(hex_to_bytes(a)).hexdigest()
 
-f = open("p2_spv.in", "r")
+f = open("p2_spv.in")
 arr = f.read().splitlines()
 print(hash(arr))
 f.close()

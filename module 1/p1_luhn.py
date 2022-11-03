@@ -1,8 +1,7 @@
 def luhn(s: str) -> int:
   x_idx = s[::-1].index("X")
   s = s.replace("X", "0")
-  possible_x = 10 - sum(double_nums(s)) % 10
-  if possible_x == 10: possible_x = 0
+  possible_x = (10 - sum(double_nums(s))) % 10
   if x_idx % 2 == 0:
     return possible_x
   elif possible_x % 2 == 0:
@@ -29,7 +28,7 @@ def shorten_num(i: int) -> int:
   for c in s: new_num += int(c)
   return new_num
 
-f = open("p1_luhn.in", "r")
+f = open("p1_luhn.in")
 s = f.read()
 out = "".join([str(luhn(line)) for line in s.splitlines()])
 print(out)

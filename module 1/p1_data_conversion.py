@@ -21,7 +21,11 @@ def bytes_to_hex(b: bytes) -> str:
 def sha(b: bytes) -> bytes: # Doesn't work for question 2
   return sha256(b).digest()
 
-# print(bytes_to_int(hex_to_bytes(int_to_hex(2022))))
-# print(hex_to_int(bytes_to_hex(int_to_bytes(2022))))
+assert(2022 == bytes_to_int(hex_to_bytes(int_to_hex(2022))))
+assert(2022 == hex_to_int(bytes_to_hex(int_to_bytes(2022))))
 
-# print(bytes_to_hex(sha(int_to_bytes(8888))))
+# Questions
+# print(int_to_hex(8888))                                     # Question 1
+# print(bytes_to_hex(sha(int_to_bytes(8888))))                # Question 2
+# print(bytes_to_int(sha(hex_to_bytes("0123456789abcdef"))))  # Question 3
+# print(hex_to_int("0123456789abcdef"))                       # Question 4
