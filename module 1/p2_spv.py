@@ -18,5 +18,5 @@ def hashNode(prev: str, node: str) -> str:
 
 f = open("p2_spv.in")
 arr = f.read().splitlines()
-print(hash(arr))
 f.close()
+print(hash(arr))
