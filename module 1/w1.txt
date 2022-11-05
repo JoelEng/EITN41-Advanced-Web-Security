@@ -1,0 +1,63 @@
+----------------------------- QUESTION 1 -----------------------------
+Explain the meaning of the sentence "the multiplicative property of RSA”. 
+----------------------------------------- ✅
+This refers to how multiplication works in tandem with the RSA algorithm. It does not matter if multiplication or encryption comes first: the result will be the same either way. If you want to encrypt the multiplication of two inputs, you can either multiply them together and then encrypt the result, or encrypt each seperately and then multiply the results. The final result will be the same either way.
+
+----------------------------- QUESTION 2 -----------------------------
+How can the cut–and–choose technique be used to make sure that identifying information is properly added into an untraceable coin?
+----------------------------------------- ✅
+Cut-and-choose is a way to sample the data provided by the sender and then check that that particular data is correct. Because of the random sampling, it is highly likely that the non-sampled data is also correct, while still not sharing the entirety of the data.
+
+----------------------------- QUESTION 3 -----------------------------
+Give 2 reasons why step 3 in the "spending a coin" protocol for untraceable eCash (Lecture 1 Part 3) is not practical. 
+-----------------------------------------
+
+
+----------------------------- QUESTION 4 -----------------------------
+In the untraceable E-cash protocol in the lecture notes, the serial number of a coin is a signature from the bank, i.e., produced using the bank’s private key. Why (in a technical sense) can the bank not map this serial number to Alice?
+----------------------------------------- ✅
+Because of the use of blind signatures. This technique makes it so that the bank can create signatures without being aware of the identity of the user. This is made possible due to the multiplicative property of RSA.
+
+----------------------------- QUESTION 5 -----------------------------
+Give two common ways to prove/make probable that the person making a card-not-present transaction is in physical possession of the card. Compare the two alternatives in terms of security.
+----------------------------------------- ✅
+1. Address verification system (AVS)
+This means checking that the billing information provided by the user matches what could be expected from the card. I.e check that the billing address is the correct one.
+
+2. Provide information about the card
+This means querying the person about some information about the card, such as the expiry date or CVV (or similar).
+
+Both methods have the same fundamental flaw, in that this is information that is possible for a malicious third party to obtain, albeit in different ways. A billing address is often very easy to find if you know the identity of the card owner, while information about the card itself is of course accessible to anyone who manages to obtain the card. Neither of these is necessarily more secure than the other, but they do have slightly different shortcomings.
+
+----------------------------- QUESTION 6 -----------------------------
+What does it mean for a hash function to be one way? 
+----------------------------------------- ✅
+It is practically impossible (i.e it would take unreasonable computational resources) to revert the hashing, even though the hashing itself is relatively efficient. It is thus easy to get the hash of a given input, but very difficult to compute the input of a hash. 
+
+----------------------------- QUESTION 7 -----------------------------
+List two characteristics a digital bulletin board should implement and explain why they matter. (What goes wrong if a solution does not achieve both properties?) 
+----------------------------------------- ✅
+1. The past is immutable
+If this were not the case, and the past was in fact mutable, the bulletin board could be changed retroactively. This would mean that you could never be certain that a transaction will actually count, as it could be changed after the fact.
+
+2. Everyone agrees on the history
+If everyone were to disagree on the history, there would not be a clear truth as to what transactions are valid. It would then be impossible to know if your transaction was correct or not.
+
+----------------------------- QUESTION 8 -----------------------------
+The Merkle tree structure allows for short proof of belonging to the set of leaves of the tree. Explain what is meant by "sort" and give an example of a short proof for a tree with 8 leaves. 
+-----------------------------------------
+
+
+----------------------------- QUESTION 9 -----------------------------
+List 3 properties of hash functions, explain what they mean and why they matter for security. 
+----------------------------------------- ✅
+They are collision resistant, meaning that it is very difficult to find two different inputs which result in the same hash. A non-collision-resistant hash function allows a malicious individual to pretend to have the right input, just by using another input that results in the same hash. They then don't have to find your input, but could rather just find any such input with the same hash.
+
+The avalanche effect: no correlation between close inputs. I.e there should be no way of telling if two inputs are similar by looking at the hashes. Changing the input slightly will greatly change the resulting hash. A hash function which does not have the avalanche effect makes it possible to make predictions about the input based on the hash.
+
+They are one-way, meaning that it is very difficult (practically impossible) to revert the hashing. Thus, you cannot feasibly use a hash function to compute the input that resulted in that hash function. One-way hashes allow you to, for example, store passwords as hashes without running the risk of someone with access to your database figuring out the passwords.
+
+----------------------------- QUESTION 10 ----------------------------
+How large (in GB) is the whole Bitcoin blockchain now (this current month)? 
+----------------------------------------- ✅
+435.63 GB (as of November 4th)

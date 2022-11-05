@@ -23,14 +23,12 @@ def double_nums(s: str) -> tuple[list, int]:
 
 def shorten_num(i: int) -> int:
   "Add together all numbers in an int"
-  s = str(i)
-  new_num = 0
-  for c in s: new_num += int(c)
-  return new_num
+  if i >= 10: return i - 9
+  else: return i
 
 f = open("p1_luhn.in")
 s = f.read()
 f.close()
 out = "".join([str(luhn(line)) for line in s.splitlines()])
 print(out)
-# print(int(out) == 5496331440914992338434701218071555719657419448245128019889398009532562488698540071959143506293615978)
+assert(int(out) == 7966652511046784222736055250353099011149212567448299771238329295331001899904649143805478397222467564)

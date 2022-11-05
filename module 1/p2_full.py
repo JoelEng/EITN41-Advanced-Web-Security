@@ -12,8 +12,7 @@ def hash_line(arr: list):
 
 def set_new_i():
   global i
-  if i % 2 == 0: i = int(i / 2)
-  else: i = int((i - 1) / 2)
+  i = int(i / 2)
 
 def add_to_path(arr: list):
   if i % 2 == 0: path_to_i.append("R" + arr[i + 1])
