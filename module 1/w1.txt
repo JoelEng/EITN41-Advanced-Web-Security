@@ -1,7 +1,7 @@
 ----------------------------- QUESTION 1 -----------------------------
 Explain the meaning of the sentence "the multiplicative property of RSA”. 
 ----------------------------------------- ✅
-This refers to how multiplication works in tandem with the RSA algorithm. It does not matter if multiplication or encryption comes first: the result will be the same either way. If you want to encrypt the multiplication of two inputs, you can either multiply them together and then encrypt the result, or encrypt each seperately and then multiply the results. The final result will be the same either way.
+This refers to how multiplication works in tandem with the RSA algorithm. It does not matter if multiplication or encryption comes first: the result will be the same either way. If you want to encrypt the multiplication of two inputs, you can either multiply them together and then encrypt the result, or encrypt each separately and then multiply the results. The final result will be the same either way.
 
 ----------------------------- QUESTION 2 -----------------------------
 How can the cut–and–choose technique be used to make sure that identifying information is properly added into an untraceable coin?
@@ -9,9 +9,11 @@ How can the cut–and–choose technique be used to make sure that identifying i
 Cut-and-choose is a way to sample the data provided by the sender and then check that that particular data is correct. Because of the random sampling, it is highly likely that the non-sampled data is also correct, while still not sharing the entirety of the data.
 
 ----------------------------- QUESTION 3 -----------------------------
-Give 2 reasons why step 3 in the "spending a coin" protocol for untraceable eCash (Lecture 1 Part 3) is not practical. 
------------------------------------------
+Give 2 reasons why step 3 in the "spending a coin" protocol for untraceable eCash (Lecture 2 Part 3) is not practical. 
+----------------------------------------- ✅
+Step 3 involves asking the bank if the coin has already been spent. Asking the bank such a question would, in this system, mean that the bank has to look through all previous transactions. In a potentially huge database, this could take an exceedingly long time.
 
+Another issue is that Alice, if she sends Bob an already spent coin, still remains anonymous to the bank. There is therefore no way for the bank to punish Alice for her double spending, meaning that she easily escapes the consequences of breaking the rules.
 
 ----------------------------- QUESTION 4 -----------------------------
 In the untraceable E-cash protocol in the lecture notes, the serial number of a coin is a signature from the bank, i.e., produced using the bank’s private key. Why (in a technical sense) can the bank not map this serial number to Alice?
@@ -44,9 +46,13 @@ If this were not the case, and the past was in fact mutable, the bulletin board 
 If everyone were to disagree on the history, there would not be a clear truth as to what transactions are valid. It would then be impossible to know if your transaction was correct or not.
 
 ----------------------------- QUESTION 8 -----------------------------
-The Merkle tree structure allows for short proof of belonging to the set of leaves of the tree. Explain what is meant by "sort" and give an example of a short proof for a tree with 8 leaves. 
------------------------------------------
+The Merkle tree structure allows for short proof of belonging to the set of leaves of the tree. Explain what is meant by "short" and give an example of a short proof for a tree with 8 leaves. 
+----------------------------------------- ✅
+A short proof means that the computational effort to check if a leaf belongs to a tree is significantly lower than having to check the entire tree to find the leaf. Merkle trees do this through hash values, which means that the proof for a leaf is only as long as the path from that leaf to the root.
 
+Merkle tree short proofs are performed by hashing the leaf with its sibling, and then repeating that step for all ancestors of the node until the root is reached. The time to evaluate the potential inclusion of a leaf is then proportional to the depth of the tree instead of the number of leaves.
+
+In the example of a tree with 8 leaves, the hashing function will have to be done three times, starting with the leaf and its sibling.
 
 ----------------------------- QUESTION 9 -----------------------------
 List 3 properties of hash functions, explain what they mean and why they matter for security. 
