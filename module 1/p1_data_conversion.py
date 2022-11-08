@@ -30,6 +30,6 @@ assert(sha_hex("0123456789abcdef") == bytes_to_hex(sha(hex_to_bytes("0123456789a
 
 # Questions
 # print(int_to_hex(8888))                                     # Question 1
-# print(bytes_to_hex(sha(int_to_bytes(8888))))                # Question 2
-# print(bytes_to_int(sha(hex_to_bytes("0123456789abcdef"))))  # Question 3
+# print(bytes_to_hex(sha(int_to_bytes(8888))))                # Question 2, should use sha_hex instead
+# print(bytes_to_int(sha(hex_to_bytes("0123456789abcdef"))))  # Question 3, should use sha_hex instead
 # print(hex_to_int("0123456789abcdef"))                       # Question 4

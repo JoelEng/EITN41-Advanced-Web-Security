@@ -7,8 +7,7 @@ def luhn(s: str) -> int:
   elif possible_x % 2 == 0:
     return int(possible_x / 2)
   else:
-    x = "".join([str(1), str(possible_x - 1)])
-    return int(int(x) / 2)
+    return int((possible_x + 9) / 2)
 
 def double_nums(s: str) -> tuple[list, int]:
   "Doubles every other number. Returns a reverted array"
