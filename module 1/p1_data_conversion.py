@@ -4,7 +4,7 @@ def int_to_hex(i: int) -> str:
   return "{0:#0{1}x}".format(i,10)[2:]
 
 def int_to_bytes(i: int) -> bytes:
-  return int.to_bytes(i, 4, "big")
+  return i.to_bytes(4, "big")
 
 def hex_to_int(h: str) -> int:
   return int(h, 16)
