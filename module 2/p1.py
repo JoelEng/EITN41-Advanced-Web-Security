@@ -25,3 +25,5 @@ print(get_secret(helpers, master_points))
 assert(get_delta(4, [1, 4]) == - 1 / 3)
 assert(k == len(helpers) == len(master_points) == len(priv_poly))
 assert(n == len(shares) + 1)
+
+print("Question 9:", int(poly.polyval(0, poly.polyfit([1, 2, 3, 4], [0, 2, 4, 10], 3))))
