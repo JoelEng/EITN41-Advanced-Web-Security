@@ -14,12 +14,12 @@ def get_delta(i: int, l: list) -> int:
     delta *= j / (j - i)
   return delta
 
-k, n = 5, 8
-priv_poly = [13, 8, 11, 1, 5] # Defines your polynomial
-shares = [75, 75, 54, 52, 77, 54, 43] # Shares recieved from others
-helpers = [1, 2, 4, 5, 7] # Accomplices
+k, n = 4, 7
+priv_poly = [3, 5, 10, 11] # Defines your polynomial
+shares = [45, 39, 41, 55, 45, 41] # Shares recieved from others
+helpers = [1, 3, 5, 6] # Accomplices
 p = sum([int(poly.polyval(1, priv_poly))] + shares)
-master_points = [p, 2782, 30822, 70960, 256422] # All known points on the master polynomial
+master_points = [p, 3313, 12939, 21430] # All known points on the master polynomial
 
 print(get_secret(helpers, master_points))
 assert(get_delta(4, [1, 4]) == - 1 / 3)
